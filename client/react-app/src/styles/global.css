@@ -1,0 +1,28 @@
+@import url(var.css);
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	background-color: var(--background);
+}
+
+html * {
+	font-family: "Urbanist", sans-serif; /* TODO: Change font-family */
+}
+
+#root {
+	width: 100%;
+}
