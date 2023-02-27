@@ -24,24 +24,29 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        fixedSize: Size(
-          SizeConfig.blockSizeHorizontal! * width,
-          SizeConfig.blockSizeHorizontal! * height,
-        ),
-        backgroundColor: color ?? AppStyles.kMainColor,
-        padding: const EdgeInsets.symmetric(vertical: 12.0),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10.0),
-        ),
+    return ConstrainedBox(
+      constraints: const BoxConstraints(
+        maxWidth: 300,
       ),
-      child: Text(
-        text,
-        style: TextStyle(
-            fontSize: SizeConfig.blockSizeHorizontal! * size,
-            color: textColor ?? AppStyles.kBackgroundColor),
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          fixedSize: Size(
+            SizeConfig.blockSizeHorizontal! * width,
+            SizeConfig.blockSizeHorizontal! * height,
+          ),
+          backgroundColor: color ?? AppStyles.kMainColor,
+          padding: const EdgeInsets.symmetric(vertical: 12.0),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+        ),
+        child: Text(
+          text,
+          style: TextStyle(
+              fontSize: SizeConfig.blockSizeHorizontal! * size,
+              color: textColor ?? AppStyles.kBackgroundColor),
+        ),
       ),
     );
   }

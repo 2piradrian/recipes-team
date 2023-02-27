@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/components/custom_button.dart';
 import 'package:flutter_app/style/app_styles.dart';
 
 class LoginPage extends StatelessWidget {
@@ -22,7 +23,7 @@ class LoginPage extends StatelessWidget {
               Container(
                 decoration: const BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage("assets/login_animation.gif"),
+                    image: AssetImage("assets/login.gif"),
                     fit: BoxFit.contain,
                   ),
                 ),
@@ -94,25 +95,12 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       const SizedBox(height: 20.0),
-                      ElevatedButton(
-                        onPressed: () {
-                          if (_formKey.currentState!.validate()) {
-                            _formKey.currentState!.save();
-                            // Aquí iría la lógica para verificar las credenciales
-                            // y acceder a la aplicación principal
-                          }
-                        },
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.orangeAccent,
-                          padding: const EdgeInsets.symmetric(vertical: 12.0),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                        ),
-                        child: const Text(
-                          'Iniciar sesión',
-                          style: TextStyle(fontSize: 18.0),
-                        ),
+                      CustomButton(
+                        text: 'Iniciar sesión',
+                        onPressed: () => validateInputs(_formKey),
+                        height: 12,
+                        width: 80,
+                        size: 3.8,
                       ),
                       const SizedBox(height: 20.0),
                       TextButton(
@@ -133,5 +121,14 @@ class LoginPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  validateInputs(GlobalKey<FormState> _formKey) {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+      // Aquí iría la lógica para verificar las credenciales
+      // y acceder a la aplicación principal
+    }
+    return null;
   }
 }
