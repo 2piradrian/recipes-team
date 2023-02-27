@@ -46,7 +46,9 @@ class WelcomePage extends StatelessWidget {
               ),
               CustomButton(
                 text: 'Iniciar Sesión',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/login');
+                },
                 height: 12,
                 width: 50,
                 size: 3.8,
@@ -58,7 +60,9 @@ class WelcomePage extends StatelessWidget {
               ),
               CustomButton(
                 text: 'Registrarse',
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/register');
+                },
                 height: 12,
                 width: 50,
                 size: 3.8,
