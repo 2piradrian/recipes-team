@@ -13,7 +13,7 @@ class LoginPage extends StatelessWidget {
 
     return Scaffold(
       /* resizeToAvoidBottomInset: true, */
-      backgroundColor: AppStyles.kSecondaryBackgroundColor,
+      backgroundColor: AppStyles.kBackgroundColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -103,7 +103,7 @@ class LoginPage extends StatelessWidget {
                           }
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Colors.orangeAccent,
+                          backgroundColor: Colors.orangeAccent,
                           padding: const EdgeInsets.symmetric(vertical: 12.0),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10.0),
