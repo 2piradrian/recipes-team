@@ -4,7 +4,7 @@ import 'size_config.dart';
 
 class AppStyles {
   /* Colors */
-  static const kMainColor = Color(0xfffec41f);
+  static const kMainColor = Color(0xffffab40);
   static const kSecondaryColor = Color(0xffd9491e);
   static const kBackgroundColor = Color(0xffa6a6a6);
   static const kSecondaryBackgroundColor = Color(0xfff2f2f2);
