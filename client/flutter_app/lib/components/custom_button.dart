@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/style/app_styles.dart';
+import 'package:flutter_app/style/size_config.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
   final double height;
   final double width;
+  final double size;
   final VoidCallback onPressed;
   final Color? color;
   final Color? textColor;
@@ -14,6 +16,7 @@ class CustomButton extends StatelessWidget {
     required this.onPressed,
     required this.height,
     required this.width,
+    required this.size,
     this.color,
     this.textColor,
     Key? key,
@@ -24,7 +27,10 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        fixedSize: Size(height, width),
+        fixedSize: Size(
+          SizeConfig.blockSizeHorizontal! * width,
+          SizeConfig.blockSizeHorizontal! * height,
+        ),
         backgroundColor: color ?? AppStyles.kMainColor,
         padding: const EdgeInsets.symmetric(vertical: 12.0),
         shape: RoundedRectangleBorder(
@@ -34,7 +40,8 @@ class CustomButton extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-            fontSize: 18.0, color: textColor ?? AppStyles.kBackgroundColor),
+            fontSize: SizeConfig.blockSizeHorizontal! * size,
+            color: textColor ?? AppStyles.kBackgroundColor),
       ),
     );
   }
