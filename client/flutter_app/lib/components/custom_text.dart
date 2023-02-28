@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/style/app_styles.dart';
-import 'package:flutter_app/style/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomText extends StatelessWidget {
-  final double size;
+  final double fontSize;
   final String text;
   final FontWeight weight;
-  const CustomText(
-      {super.key,
-      required this.size,
-      required this.text,
-      required this.weight});
+  const CustomText({
+    super.key,
+    required this.fontSize,
+    required this.text,
+    required this.weight,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class CustomText extends StatelessWidget {
       style: GoogleFonts.montserrat(
         fontWeight: weight,
         color: AppStyles.kContrastColor,
-        fontSize: SizeConfig.blockSizeHorizontal! * size,
+        fontSize: fontSize,
       ),
     );
   }

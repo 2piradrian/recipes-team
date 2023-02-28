@@ -6,7 +6,7 @@ class CustomButton extends StatelessWidget {
   final String text;
   final double height;
   final double width;
-  final double size;
+  final double fontSize;
   final VoidCallback onPressed;
   final Color? color;
   final Color? textColor;
@@ -16,7 +16,7 @@ class CustomButton extends StatelessWidget {
     required this.onPressed,
     required this.height,
     required this.width,
-    required this.size,
+    required this.fontSize,
     this.color,
     this.textColor,
     Key? key,
@@ -32,8 +32,8 @@ class CustomButton extends StatelessWidget {
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           fixedSize: Size(
-            SizeConfig.blockSizeHorizontal! * width,
-            SizeConfig.blockSizeHorizontal! * height,
+            width,
+            height,
           ),
           backgroundColor: color ?? AppStyles.kMainColor,
           padding: const EdgeInsets.symmetric(vertical: 12.0),
@@ -44,7 +44,7 @@ class CustomButton extends StatelessWidget {
         child: Text(
           text,
           style: TextStyle(
-              fontSize: SizeConfig.blockSizeHorizontal! * size,
+              fontSize: fontSize,
               color: textColor ?? AppStyles.kBackgroundColor),
         ),
       ),

@@ -100,7 +100,7 @@ class LoginPage extends StatelessWidget {
                         onPressed: () => validateInputs(_formKey),
                         height: 12,
                         width: 80,
-                        size: 3.8,
+                        fontSize: 3.8,
                       ),
                       const SizedBox(height: 20.0),
                       TextButton(

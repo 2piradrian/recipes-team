@@ -11,6 +11,7 @@ class Responsive {
   bool get isTablet => _isTablet;
 
   static Responsive of(BuildContext context) => Responsive(context);
+
   Responsive(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     _width = size.width;
